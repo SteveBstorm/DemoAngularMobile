@@ -1,0 +1,6 @@
+<h3>Service</h3>
+<p>Démo injection de dépendance + Explication Promise</p>
+
+<p *ngIf="status">Vous êtes connecté</p>
+<button (click)="signIn()" *ngIf="!status">Se Connecter</button>
+<button (click)="signOut()" *ngIf="status">Se Déconnecter</button>

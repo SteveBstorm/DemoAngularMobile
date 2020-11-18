@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Link } from 'src/app/models/link.model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,7 +11,7 @@ export class NavComponent implements OnInit {
 
   Links : Link[]
 
-  constructor() { }
+  constructor(private _authService : AuthService) { }
 
   ngOnInit(): void {
     this.Links = [
@@ -21,6 +22,7 @@ export class NavComponent implements OnInit {
         {url : '/demo/demo2', title : 'Demo 2 - Event Bindings'},
         {url : '/demo/demo3', title : 'Demo 3 - Pipes'},
         {url : '/demo/demo4', title : 'Demo 4 - Directives'},
+        {url : '/demo/demo5', title : 'Demo 5 - Services'},
       ]},
       {title : 'Exercices', children : [
         {url : '/exo/exo1', title: 'Chronomètre'}
