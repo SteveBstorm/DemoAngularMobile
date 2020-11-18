@@ -1,0 +1,28 @@
+.head {
+    position: fixed;
+    height: 50px;
+    padding : 25px;
+    margin : 0;
+    width: 100%;
+    background-color: bisque;
+    border-bottom: black 2px solid;
+    font-size : 24px;
+    font-weight: bolder;
+}
+
+.nav{
+    position : fixed;
+    left : 0;
+    top : 100px;
+    background-color: lightcyan;
+    width: 20%;
+    height: 100%;
+    border-right: black 2px solid;
+}
+
+.content {
+    position: absolute;
+    top : 100px;
+    left : 20%;
+    padding : 30px;
+}

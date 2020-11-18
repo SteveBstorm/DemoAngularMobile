@@ -1,0 +1,11 @@
+<h3>Event Binding</h3>
+
+<p>Mon nombre vaut : {{ nombre }}</p> 
+ <button (click)="increase()" [disabled]="nombre >= 9">+</button> 
+ <button (click)="decrease()" [disabled]="nombre <= 0">-</button>
+
+ <!--
+     {{Binding de propriétés}}
+     (event binding) => liaison vers un méthode du TS
+     [binding d'attribut] => soumet un attribut à une condition
+ -->

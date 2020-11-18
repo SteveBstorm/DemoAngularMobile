@@ -1,0 +1,37 @@
+<h3>Structural directives</h3>
+
+<p>NGIF</p>
+
+<p (click)="toggle()" 
+    style="cursor: pointer;"
+    [ngClass]="{'maClasse' : !isToggled}"
+    >Afficher Détail</p>
+<p *ngIf="isToggled">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti numquam voluptatibus nulla, 
+    delectus impedit, consectetur alias nisi labore quo optio doloribus corporis! Omnis illum, labore 
+    delectus minima laboriosam optio rerum.</p>
+
+<hr />
+<p>NGFOR</p>
+
+<ul>
+    <li appHighlight *ngFor="let item of liste; let i = index; let pair = even" 
+        [ngClass]="{'maClasse' : pair}"
+    >
+       {{i}} - {{item}}
+    </li>
+</ul>
+
+<hr />
+
+<p>ngSwitch</p>
+<input appHighlight [(ngModel)]="maVar" />
+
+<div [ngSwitch]="maVar">
+    <div *ngSwitchCase="1" style="background-color: aqua;">Pomme</div>
+    <div *ngSwitchCase="2" style="background-color: red;">Poire</div>
+    <div *ngSwitchCase="3" style="background-color: yellowgreen;">Peche</div>
+    <div *ngSwitchDefault>Entrez 1 2 ou 3</div>
+</div>
+
+
+

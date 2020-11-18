@@ -1,0 +1,35 @@
+<!--<ul>
+    <li><a routerLink="/home">Home</a></li>
+    <li><a routerLink="/about">About</a></li>
+    <li>Demos
+        <ul>
+            <li><a routerLink="/demo/demo1">Demo 1 - Bindings</a></li>
+            <li><a routerLink="/demo/demo2">Demo 2 - Event Bindings</a></li>
+            <li><a routerLink="/demo/demo3">Demo 3 - Pipes</a></li>
+            <li><a routerLink="/demo/demo4">Demo 4 - Directives</a></li>
+        </ul>
+    </li>
+    <li>Exercices
+        <ul>
+            <li><a routerLink="/exo/exo1">Chronomètre</a></li>
+        </ul>
+    </li>
+</ul>-->
+
+<ul>
+    <li *ngFor="let lien of Links; let i = index">
+        <a [routerLink]="lien.url"
+            (click)="toggleVisible(i)"
+            [ngClass]="{'master' : lien.children}"
+            >
+            {{lien.title}}
+        </a>
+        <ul *ngIf="lien.children && lien.isVisible">
+            <li *ngFor="let sousLien of lien.children">
+                <a [routerLink]="sousLien.url">
+                    {{sousLien.title}}
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>

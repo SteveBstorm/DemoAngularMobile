@@ -1,0 +1,26 @@
+ul {
+    list-style-type: none;
+    font-weight: bolder;
+}
+
+ul li {
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+.nav a {
+    color : black;
+    font-size: 12px;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover {
+    color : darkgray;
+    text-decoration: underline;
+}
+
+.master {
+    text-decoration: underline;
+}
