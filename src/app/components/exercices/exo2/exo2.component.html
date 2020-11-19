@@ -1,0 +1,19 @@
+<h3>Panier de course</h3>
+
+<p>
+    <input [(ngModel)]="newItem"> 
+    <button (click)="addArticle()" [disabled]="!newItem">Ajouter</button>
+</p>
+
+<hr />
+<ul *ngIf="articleList.length > 0">
+    <li *ngFor="let a of articleList;  let i = index">
+        <label (click)="check(i)"
+               [ngStyle]="{'text-decoration' : a.isChecked ? 'line-through' : 'none'}">
+            {{a.name | titlecase}} : {{a.qty}} &nbsp; 
+            </label>
+        <button (click)="addOne(i)">+</button>
+        <button (click)="removeOne(i)">-</button>
+        <button (click)="remove(i)">X</button>
+    </li>
+</ul>

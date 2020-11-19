@@ -25,7 +25,8 @@ export class NavComponent implements OnInit {
         {url : '/demo/demo5', title : 'Demo 5 - Services'},
       ]},
       {title : 'Exercices', children : [
-        {url : '/exo/exo1', title: 'Chronomètre'}
+        {url : '/exo/exo1', title: 'Chronomètre'},
+        {url : '/exo/exo2', title: 'Shopping'},
       ]}
     ]
   }

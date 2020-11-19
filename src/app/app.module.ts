@@ -17,6 +17,7 @@ import { Exo1Component } from './components/exercices/exo1/exo1.component';
 import { Demo4Component } from './components/demo/demo4/demo4.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { Demo5Component } from './components/demo/demo5/demo5.component';
+import { Exo2Component } from './components/exercices/exo2/exo2.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { Demo5Component } from './components/demo/demo5/demo5.component';
     Exo1Component,
     Demo4Component,
     HighlightDirective,
-    Demo5Component
+    Demo5Component,
+    Exo2Component,
   ],
   imports: [
     BrowserModule,
