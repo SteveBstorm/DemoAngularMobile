@@ -1,0 +1,22 @@
+
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <p>*Nom : <input type="text" formControlName="nom"></p>
+    <p>*Email : <input type="email" formControlName="mail"></p>
+    <p>*Date de naissance : <input type="date" formControlName="dateNaiss"></p>
+    <p *ngIf="formGroup.controls['dateNaiss'].invalid" >
+        {{formGroup.controls['dateNaiss'].errors['dateError']}}
+    </p>
+
+    <div formArrayName="films">
+        <h4>Vos films préférés</h4>
+        <label (click)="onAddFilm()" style="cursor: pointer;">Ajouter</label>
+        <div *ngFor="let filmControl of getFilms().controls; let i = index">
+            <p>Film {{i + 1}} : 
+                <input type="text" [formControlName]="i"> 
+                <button (click)="removeC(i)"> X </button>
+            </p>
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="formGroup.invalid" >Valider</button>
+</form>

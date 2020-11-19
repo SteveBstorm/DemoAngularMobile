@@ -1,0 +1,34 @@
+<h3>Ajout d'un user</h3>
+<form [formGroup]="userFG" (ngSubmit)="onSubmit()">
+    <p>Pseudo : <input type="text" formControlName="pseudo"></p>
+    <p>Email : <input type="email" formControlName="email"></p>
+    <p>Date de naissance : <input type="date" formControlName="dateNaiss"></p>
+    <p *ngIf="userFG.controls['dateNaiss'].invalid" >
+        {{userFG.controls['dateNaiss'].errors['dateError']}}
+    </p>
+    <hr />
+
+    <div formArrayName="games">
+        <h4>Vos Jeux vidéos préférés</h4>
+        <label (click)="onAddGame()" style="cursor: pointer;">Ajouter</label>
+        <div *ngFor="let gControl of getGames().controls; let i = index">
+            <p>Jeu {{i + 1}} : 
+                <input type="text" [formControlName]="i"> 
+                <button (click)="removeGame(i)"> X </button>
+            </p>
+        </div>
+    </div>
+    <hr />
+    <div formArrayName="mangas">
+        <h4>Vos Mangas préférés</h4>
+        <label (click)="onAddManga()" style="cursor: pointer;">Ajouter</label>
+        <div *ngFor="let gControl of getMangas().controls; let i = index">
+            <p>Mangas {{i + 1}} : 
+                <input type="text" [formControlName]="i"> 
+                <button (click)="removeManga(i)"> X </button>
+            </p>
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="userFG.invalid" >Valider</button>
+</form>

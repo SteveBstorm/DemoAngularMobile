@@ -23,10 +23,12 @@ export class NavComponent implements OnInit {
         {url : '/demo/demo3', title : 'Demo 3 - Pipes'},
         {url : '/demo/demo4', title : 'Demo 4 - Directives'},
         {url : '/demo/demo5', title : 'Demo 5 - Services'},
+        {url : '/demo/demo6', title : 'Demo 6 - Formulaires'},
       ]},
       {title : 'Exercices', children : [
         {url : '/exo/exo1', title: 'Chronomètre'},
         {url : '/exo/exo2', title: 'Shopping'},
+        {url : '/exo/exo3', title: 'Crud User'},
       ]}
     ]
   }

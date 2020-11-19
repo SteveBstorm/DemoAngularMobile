@@ -1,0 +1,10 @@
+<h3>Liste des Geeks</h3>
+<button (click)="addNew()">Créer un geek</button>
+<hr />
+<ul>
+    <li *ngFor="let u of userList; let i = index">
+        <a [routerLink]="['/exo/exo3/details/'+i]" >{{u.pseudo}} </a> -- &nbsp; 
+        <button (click)="updateUser(i)">Modifier</button> &nbsp;
+        <button (click)="deleteUser(i)">-X-</button>
+    </li>
+</ul>
