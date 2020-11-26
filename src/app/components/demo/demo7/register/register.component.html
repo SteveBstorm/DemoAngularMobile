@@ -1,0 +1,20 @@
+<h3>Nouvel utilisateur</h3>
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+    <p>
+        <label>Nom : </label>
+        <input type="text" formControlName="lastName" />
+    </p>
+    <p>
+        <label>Prénom : </label>
+        <input type="text" formControlName="firstName" />
+    </p><p>
+        <label>E-Mail : </label>
+        <input type="email" formControlName="email" />
+    </p><p>
+        <label>Mot de passe : </label>
+        <input type="password" formControlName="password" />
+    </p>
+    <p>
+        <button type="submit" [disabled]="fg.invalid">Valider</button>
+    </p>
+</form>

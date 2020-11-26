@@ -1,0 +1,13 @@
+<h3>Connexion</h3>
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+    <p>
+        <label>E-Mail : </label>
+        <input type="email" formControlName="email" />
+    </p><p>
+        <label>Mot de passe : </label>
+        <input type="password" formControlName="password" />
+    </p>
+    <p>
+        <button type="submit" [disabled]="fg.invalid">Valider</button>
+    </p>
+</form>
