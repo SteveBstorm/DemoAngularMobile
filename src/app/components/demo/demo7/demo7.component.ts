@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Actor } from './models/actor.model';
+import { ApiAuthService } from './service/api-auth.service';
 
 @Component({
   selector: 'app-demo7',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Demo7Component implements OnInit {
 
-  constructor() { }
+  listActor : Actor[]
+
+  constructor(
+    private _service : ApiAuthService
+  ) { }
 
   ngOnInit(): void {
+    this._service.getActor().subscribe(
+      (listFromService : Actor[]) => this.listActor = listFromService,
+      (error) => console.log(error)
+    )
   }
 
 }
